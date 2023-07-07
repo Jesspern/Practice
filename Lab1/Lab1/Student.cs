@@ -23,41 +23,13 @@ namespace Lab1
 		public Student(string? name, string? surname, string? patronymic, int number_faculty, int number_group,
 			int year_entry, char type_education, string? type_practice)
 		{
-			try
-			{
-				_name ??= name;
-			}
-			catch (ArgumentNullException ex)
-			{
-				Console.WriteLine(ex.Message);
-			}
+			if (name == null) throw new ArgumentNullException(nameof(name));
 
-			try
-			{
-				_surname ??= surname;
-			}
-			catch (ArgumentNullException ex)
-			{
-				Console.WriteLine(ex.Message);
-			}
+			if (surname == null) throw new ArgumentNullException(nameof(surname));
 
-			try
-			{
-				_patronymic ??= patronymic;
-			}
-			catch (ArgumentNullException ex)
-			{
-				Console.WriteLine(ex.Message);
-			}
+			if (patronymic == null) throw new ArgumentNullException(nameof(patronymic));
 
-			try
-			{
-				_type_practice ??= type_practice;
-			}
-			catch (ArgumentNullException ex)
-			{
-				Console.WriteLine(ex.Message);
-			}
+			if (type_practice == null) throw new ArgumentNullException (nameof(type_practice));
 
 			_number_faculty = number_faculty;
 			_number_group = number_group;
